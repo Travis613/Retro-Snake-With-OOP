@@ -3,5 +3,5 @@ from abc import ABC, abstractmethod
 class GameObject(ABC):
 
     @abstractmethod
-    def draw(self):
+    def draw(self, screen):
         pass
