@@ -3,7 +3,6 @@ import sys
 
 class Snake:
     def __init__(self):
-        pygame.init()
         self.clock = pygame.time.Clock()
         self.screen_height = 600
         self.screen_width = 600
@@ -12,9 +11,10 @@ class Snake:
 
     def draw(self):
         self.screen.fill(self.screen_background_color)
+
         pygame.display.update()
 
-    def runGame(self):
+    def run_game(self):
         running = True
         while running:
             self.clock.tick(60)
@@ -27,6 +27,3 @@ class Snake:
 
         pygame.quit()
         sys.exit()
-
-snake_instance = Snake()
-snake_instance.runGame()
