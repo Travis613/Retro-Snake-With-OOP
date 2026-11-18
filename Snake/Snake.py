@@ -3,6 +3,7 @@ import sys
 
 from Player import Player
 from Food import Food
+from Score import Score
 
 class Snake:
     def __init__(self):
@@ -15,12 +16,14 @@ class Snake:
 
         self.player = Player()
         self.food = Food()
+        self.score = Score()
 
     def draw(self):
         self.screen.fill(self.screen_background_color)
 
         self.player.draw(self.screen)
         self.food.draw(self.screen)
+        self.score.draw(self.screen)
 
         pygame.display.update()
 
