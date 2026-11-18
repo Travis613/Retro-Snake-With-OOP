@@ -2,6 +2,7 @@ import pygame
 import sys
 
 from Player import Player
+from Food import Food
 
 class Snake:
     def __init__(self):
@@ -13,11 +14,13 @@ class Snake:
         self.screen_background_color = (5, 18, 8)
 
         self.player = Player()
+        self.food = Food()
 
     def draw(self):
         self.screen.fill(self.screen_background_color)
 
         self.player.draw(self.screen)
+        self.food.draw(self.screen)
 
         pygame.display.update()
 
