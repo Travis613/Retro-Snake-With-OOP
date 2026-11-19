@@ -37,6 +37,10 @@ class Snake:
                 if event.type == pygame.QUIT:
                     running = False
 
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:
+                        self.food.update()
+
             self.draw()
 
         pygame.quit()

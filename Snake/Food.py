@@ -17,4 +17,5 @@ class Food(GameObject):
         pygame.draw.rect(screen, self.color, self.rect)
 
     def update(self):
-        pass
+        self.rect.x = random.randint(40, 560)
+        self.rect.y = random.randint(40, 560)
