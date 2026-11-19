@@ -9,19 +9,19 @@ class Player(GameObject):
         self.width = 50
         self.height = 50
         self.color = (51, 255, 51)
-        self.direction_moving = {"axis": "y", "direction": "down"}
+        self.last_point = {"axis": "y", "direction": "down"}
         self.snake = [pygame.Rect(self.x, self.y, self.width, self.height)]
 
     def draw(self, screen):
         for snake_parts in self.snake:
-            pygame.draw.rect(screen, self.color, snake_parts)
+            pygame.draw.rect(screen, self.color, snake_parts, width=3)
 
     def update(self):
-        if self.direction_moving["axis"] == "x" and self.direction_moving["direction"] == "right":
+        if self.last_point["axis"] == "x" and self.last_point["direction"] == "right":
             self.snake.append(pygame.Rect(self.x - self.width, self.y, self.height, self.width))
-        elif self.direction_moving["axis"] == "x" and self.direction_moving["direction"] == "left":
+        elif self.last_point["axis"] == "x" and self.last_point["direction"] == "left":
             self.snake.append(pygame.Rect(self.x + self.width, self.y, self.height, self.width))
-        if self.direction_moving["axis"] == "y" and self.direction_moving["direction"] == "up":
+        if self.last_point["axis"] == "y" and self.last_point["direction"] == "up":
             self.snake.append(pygame.Rect(self.x, self.y + self.height, self.width, self.height))
-        if self.direction_moving["axis"] == "y" and self.direction_moving["direction"] == "down":
+        if self.last_point["axis"] == "y" and self.last_point["direction"] == "down":
             self.snake.append(pygame.Rect(self.x, self.y - self.height, self.width, self.height))
