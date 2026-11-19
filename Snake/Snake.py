@@ -29,6 +29,7 @@ class Snake:
 
     def run_game(self):
         running = True
+
         while running:
             self.clock.tick(60)
 
