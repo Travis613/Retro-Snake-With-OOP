@@ -14,3 +14,6 @@ class Score(GameObject):
 
     def draw(self, screen):
         screen.blit(self.text_surface, self.text_rect)
+
+    def update(self):
+        pass

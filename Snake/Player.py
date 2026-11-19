@@ -14,3 +14,6 @@ class Player(GameObject):
     def draw(self, screen):
         for snake_parts in self.snake:
             pygame.draw.rect(screen, self.color, snake_parts)
+
+    def update(self):
+        pass
