@@ -37,6 +37,8 @@ class Snake:
                 if event.type == pygame.QUIT:
                     running = False
 
+            self.player.move()
+
             self.draw()
 
         pygame.quit()
