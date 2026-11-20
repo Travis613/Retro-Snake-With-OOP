@@ -1,8 +1,6 @@
 import pygame
 
-from GameObject import GameObject
-
-class Player(GameObject):
+class Player:
     def __init__(self):
         self.x = 275
         self.y = 275
@@ -16,10 +14,7 @@ class Player(GameObject):
         for snake_parts in self.snake:
             pygame.draw.rect(screen, self.color, snake_parts, width=3)
 
-    def set_last_point(self, new_point):
-        self.last_point = new_point
-
-    def update(self):
+    def add_another_snake_part(self):
         if self.last_point["axis"] == "x" and self.last_point["direction"] == "right":
             self.snake.append(pygame.Rect(self.x - self.width, self.y, self.height, self.width))
         elif self.last_point["axis"] == "x" and self.last_point["direction"] == "left":

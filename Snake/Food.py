@@ -1,9 +1,7 @@
 import pygame
 import random
 
-from GameObject import GameObject
-
-class Food(GameObject):
+class Food:
 
     def __init__(self):
         self.x = random.randint(40, 560)
@@ -16,6 +14,6 @@ class Food(GameObject):
     def draw(self, screen):
         pygame.draw.rect(screen, self.color, self.rect)
 
-    def update(self):
+    def move_food(self):
         self.rect.x = random.randint(40, 560)
         self.rect.y = random.randint(40, 560)

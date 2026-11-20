@@ -1,8 +1,6 @@
 import pygame
 
-from GameObject import GameObject
-
-class Score(GameObject):
+class Score:
 
     def __init__(self):
         self.x = 0
@@ -16,5 +14,5 @@ class Score(GameObject):
         text_rect = text_surface.get_rect(topleft=(self.x, self.y))
         screen.blit(text_surface, text_rect)
 
-    def update(self):
+    def increment_score(self):
         self.score += 5
