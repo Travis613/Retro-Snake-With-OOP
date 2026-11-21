@@ -37,7 +37,17 @@ class Snake:
                 if event.type == pygame.QUIT:
                     running = False
 
-            self.player.move()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_w:
+                        self.player.direction = "up"
+                    if event.key == pygame.K_s:
+                        self.player.direction = "down"
+                    if event.key == pygame.K_d:
+                        self.player.direction = "right"
+                    if event.key == pygame.K_a:
+                        self.player.direction = "left"
+
+            self.player.move_head()
 
             self.draw()
 
